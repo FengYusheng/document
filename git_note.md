@@ -23,3 +23,8 @@
     cd learngit
     git add 'new file'
     git commit -m "一下关于本次修改的描述"
+
+## 查看文件的修改情况
+`git status` 显示哪些文件被改动了。
+
+`git diff`显示文件的哪一行具体被改成了什么样。
