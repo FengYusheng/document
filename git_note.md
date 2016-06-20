@@ -73,14 +73,46 @@
 
 2. 在工作区修改了，add到暂存区了，可是我反悔了
 
-  `git reset --hard HEAD^`
+  `git reset HEAD <file>`
 
   `git checkout -- <file>`
 
 3. 已经讲修改commit到版本库里了,我反悔了
 
-  还记得版本回溯吗？`git reset --head <commit it>`
+  还记得版本回溯吗。
 
 4. 已经把文件提交到远程库里了，我反悔了
 
    *希望你平时的人缘不错....*
+
+## 从版本库中删除文件
+
+`git rm <file>`
+
+`git commit`
+
+## 远程仓库
+把本地的版本仓库推送到github
+* 在自己的家目录下`～/`创建以对ssh key
+
+    `ssh-keygen -t rsa -C "your email"`
+* 在你的github个人账户页面的ssh选项下，增添你生成的ssh key
+
+   ![github ssh][sshkey]
+
+[sshkey]:./github_sshkey.png
+>放到github上，任何和都可以看到你的版本库了，因为设置了sshkey，别人只能看，不能修改。
+
+* 在github上新建一个版本库
+
+    ![github new repository][]
+
+[github new repository]: ./github_new_repository.png
+
+* 把本地版本库和github上的远程库关联起来
+
+    在工作区目录下`~/document`运行命令：
+
+    `git remote add orgin git@github.com:FengYusheng/document.git`
+
+*
