@@ -113,6 +113,54 @@
 
     在工作区目录下`~/document`运行命令：
 
-    `git remote add orgin git@github.com:FengYusheng/document.git`
+    `git remote add origin https://github.com/FengYusheng/document.git`
 
-*
+>github会给出提示的。
+
+* 将本地版本库推送到github
+  `git push -u orgin master`
+
+>第一次推送要有`-u`, github会有提示的
+
+## 从远程仓库克隆代码到本地版本库
+`git clone <url>`
+
+> url有https和ssh两种协议，比如：
+
+> "https://github.com/FengYusheng/document.git"
+
+> "git@github.com:FengYusheng/document.git"
+
+## 分支管理， *神奇的平行宇宙*
+* 创建分支： `git branch <name>`
+* 切换分支: `git checkout <name>`
+* 创建并切换分支: `git checkout -b <name>`
+* 合并某分支到当前分支： `git merge <name>`
+* 删除某分支： `git branch -d <name>`
+* 把暂不打算提交的工作暂存，*保护现场* : `git stash`
+
+>[分支管理][]， 神奇的平行宇宙
+
+[分支管理]: http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000
+
+## 标签管理， *让我为你拍张照*
+`git tag <name>` 默认在HEAD 上打标签。
+
+`git tag <name> [commit id]` 在指定commit id 上打标签。
+
+`git tag -d <name>` 删除一个本地标签。
+
+`git push origin <tag name>` 推送一个本地标签。
+
+`git push origin --tags` 推送全部尚未推送过的本地标签。
+
+## 使用github
+
+[使用github][]
+
+[使用github]: http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137628548491051ccfaef0ccb470894c858999603fedf000
+
+
+![fork and pull request][]
+
+[fork and pull request]: ./github_fork.png
