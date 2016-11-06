@@ -1,4 +1,8 @@
 .y# 《利用python进行数据分析》读书笔记
+
+# scipy
+http://www.scipy.org/
+
 ## 第一章　准备工作
 ### 结构化数据(structed data)
 它们可以是一个些表格(csv)，关联表(关系数据)，多维数组。将数据结构化是为了方便建模。
@@ -90,7 +94,7 @@ sorted(list)返回一个新list, list.sort()改变原来list的元素顺序，�
 [No plot window shows up with matplotlib.pyplot run with Enthought Canopy python editor]:http://stackoverflow.com/questions/21129055/no-plot-window-shows-up-with-matplotlib-pyplot-run-with-enthought-canopy-python
 
 ### 本章总结
-本章是通过几个例子向读者介绍这些攻击帮助你做什么，后续章节会详细介绍这些工具。
+本章是通过几个例子向读者介绍这些工具帮助你做什么，后续章节会详细介绍这些工具。
 
 ## 第三章　IPYTHON：一种交互式计算和开发环境
 ###　ipython基础
@@ -145,7 +149,7 @@ IPYTHON设计的目的是最大化python的 **交互** 式计算，它鼓励一�
 
 ### 让ipython更友好
 
-`__repr__`的作用是返回一个克打印的字符串，这个字符串代表了一个对象。
+`__repr__`的作用是返回一个可打印的字符串，这个字符串代表了一个对象。
 
 > *“把这个字符串传给`eval()`，可以重新获取这个对象。”* 网络上的这个言论不准确，不是任何对象都可以这么获取。
 https://bytes.com/topic/python/answers/535436-eval-repr-object-hardly-ever-works
@@ -194,3 +198,37 @@ dtype的类型：
 
 ### 数组和标量之间的运算
 数组很重要，它可以让你不用编写循环即可对数据进行批量运算，这通常叫做 **矢量化**。大小相等的数组之间的任何算术运算都会应用到元素级，数组与标量的算术运算会将那个标量值传播到各个元素。不同大小的数组之间的运算叫　**广播**。
+
+### 切片索引
+多维数组可以在一个或多个轴上切片。
+相同维数的数组视图和低维度的数组切片。
+
+### 布尔型索引
+在ipython中，randn()指的是numpy.randm.randn()，它返回一个指定维数的数组，用浮点数填充。
+
+> 在标准python中，list里存放的是对象的引用（指针）。
+  http://www.cnblogs.com/bovine/archive/2012/11/09/2763374.html
+
+**通过布尔型索引选取数组中的数据，总是创建数据的副本，即使返回一模一样的数组。**
+
+### 花式索引
+这是numpy的一个术语，指的是用一个整数数组做索引。
+
+花式索引和切片不同，它将数据复制到新数组中。
+
+### 数组转置和轴对换
+转置不产生新对象。
+
+#### 矩阵的变换，线性代数？
+改变轴的顺序。
+
+## 通用函数：快速的元素级数组函数
+这些函数把运算应用到每个元素上，比如平方，绝对值....
+
+![ufunc1][]
+![ufunc2][]
+![ufunc3][]
+
+[ufunc1]:./ufunc1.png
+[ufunc2]:./ufunc2.png
+[ufunc3]:./ufunc3.png
