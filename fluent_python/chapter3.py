@@ -18,6 +18,16 @@ my_dict.append(new_value)
 Other ways to handle missing key.
 1. Use a defaultdict instead of a plain dict.
 2. Subclass dict or any other mapping type and add a __missing__ method.
+
+
+A basic use case of `set` is removing duplication.
+Set elements must be hasable. `frozenset` is hashable, so you can have a frozenset element inside a set. 
+
+Smart use of set operations can reduce both the line count and the run time of python programes by reducing loops and lots of conditional
+logic.
+
+
+ Disassembler for Python bytecode, dis.
 """
 
 
@@ -133,3 +143,9 @@ print(d.get(4))
 print(d.get(1, 'N/A'))
 print(2 in d)
 print(1 in d)
+
+#3-10. Count occurrences needles in a haystack, both of type set.
+# {} is faster than set()
+haystack = {'a', 'b', 'c', 'd'}
+needles = {'a', 'b'}
+print(len(needles & haystack))
