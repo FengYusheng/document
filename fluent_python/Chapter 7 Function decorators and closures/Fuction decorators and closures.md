@@ -125,7 +125,20 @@ with fixed bit lengths as subclasses of `numbers.Integral.`
 def f():
     pass
 
-f = d1(d2(f()))
+f = d1(d2(f))
 ```
 
 ## Parametrized Decorators
+Make a decorator factory that takes those arguments and returns a decorator, which is then applied to the function to be 
+decorated.
+
+
+## Chapter summary
+
+Mastering closures and `nonlocal` is valuable not only to build decorators, but also to code 
+event-oriented programs for GUIs or asynchronous I/O with callbacks.
+
+
+## Note
+Decorators are best coded as classes implementing `__call__`, and not as functions like the examples 
+in this chapter.
